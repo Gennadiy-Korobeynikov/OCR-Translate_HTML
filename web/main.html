@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="app_icon.png" type="image/png">
+    <script type="text/javascript" src="/eel.js"></script>
+    <title>Распознаватель3000</title>
+</head>
+
+
+<body>
+
+<div class="container">
+    <div class="vertical-wrapper">
+        <div class="horizontal-wrapper">
+
+            <!---------------------- Mode toggle-button ------------------------->
+            <div class="button b2" id="button-10">
+              <input type="checkbox" class="checkbox" id="mode-toggle" />
+
+              <div class="knobs">
+                <span>Tesseract</span>
+              </div>
+              <div class="layer"></div>
+            </div>
+            <!------------------------------------------------------------------>
+
+
+            <!------------ InitLanguage selection Radio-button ----------------->
+            <div class = "check-boxes" id="lang-selection">
+                <label>
+                    <input type="radio" class="option-input radio" name="lang_rb" value="rus" checked />
+                    <img src="rus_icon.png" alt="Rus" class="flag-image" />
+                </label>
+
+                <label>
+                    <input type="radio" class="option-input radio" name="lang_rb" value="eng" />
+                    <img src="eng_icon.png" alt="Eng" class="flag-image" />
+                </label>
+            </div>
+        </div>
+            <!------------------------------------------------------------------>
+
+        <!-------------------------Dropzone---------------------------------->
+        <div class="dropzone" id="dropzone">
+            <img id="uploaded-image" style="display: none;" />
+            <span id="dropzone-text">Перетащите сюда изображение для распознавания текста или нажмите кнопку ниже</span>
+        <!------------------------------------------------------------------>
+        </div>
+
+        <!------------------------ImageUpload Button------------------------>
+        <div class="wrapper">
+            <div class="file-upload">
+                <input type="file" id="file-input" />
+                <i class="fa fa-arrow-up"></i>
+            </div>
+        </div>
+        <!------------------------------------------------------------------>
+
+    </div>
+
+    <!---------------Translate button & text-state-label ------------->
+    <div class="actions">
+        <button class="bubbly-button" id="translate-btn" ></button>
+        <span class="hidden" id="text-state-label" >Оригинал</span>
+    </div>
+    <!------------------------------------------------------------------>
+
+
+    <!-----------------Recognized text--------------------->
+    <div class="text-recognition" id="text-recognition">
+        <p>Здесь будет распознанный текст</p>
+    </div>
+    <button id="copyButton"></button>
+    <!---------------------------------------------------->
+
+</div>
+<div id="copyNotification" class="copy-notification">Текст скопирован в буфер обмена!</div>
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
